@@ -478,8 +478,33 @@
             0% { text-shadow: 0 0 10px rgba(106, 90, 249, 0.3); }
             100% { text-shadow: 0 0 20px rgba(106, 90, 249, 0.6); }
         }
-        .skills {
-            margin-top: 30px;
+        /* ===== Skills Section ===== */
+        .skills-section {
+            padding: 120px 0;
+            background-color: var(--dark-card);
+        }
+        .skills-container {
+            display: flex;
+            gap: 60px;
+            margin-top: 60px;
+        }
+        .skills-category {
+            flex: 1;
+        }
+        .skills-category h3 {
+            margin-bottom: 30px;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 15px;
+        }
+        .skills-category h3::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background: var(--gradient);
+            bottom: 0;
+            left: 0;
         }
         .skill-item {
             margin-bottom: 25px;
@@ -504,6 +529,188 @@
             width: 0;
             transition: width 2s ease;
         }
+        /* Tools & Technologies with Icons */
+        .tools-section {
+            margin-top: 40px;
+        }
+        .tools-category {
+            margin-bottom: 25px;
+        }
+        .tools-category h4 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 20px;
+        }
+        .tool-item {
+            text-align: center;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .tool-item:hover {
+            transform: translateY(-5px);
+            background-color: rgba(106, 90, 249, 0.1);
+            box-shadow: var(--border-glow);
+        }
+        .tool-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .tool-name {
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        /* ===== Volunteering Section ===== */
+        .volunteering-section {
+            padding: 120px 0;
+            background-color: var(--dark-bg);
+        }
+        .volunteer-item {
+            background-color: var(--dark-card);
+            border-radius: 18px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .volunteer-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        .volunteer-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .volunteer-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            color: white;
+            font-size: 1.5rem;
+        }
+        .volunteer-title {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+            color: var(--light-text);
+        }
+        .volunteer-period {
+            color: var(--gray-text);
+            font-style: italic;
+            font-size: 0.95rem;
+        }
+        .volunteer-description {
+            margin-bottom: 20px;
+            color: var(--gray-text);
+        }
+        .volunteer-achievements {
+            list-style: none;
+            padding-left: 0;
+        }
+        .volunteer-achievements li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        .volunteer-achievements li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+        
+        /* ===== Working Experience Section ===== */
+        .working-section {
+            padding: 120px 0;
+            background-color: var(--dark-card);
+        }
+        .working-item {
+            background-color: var(--dark-bg);
+            border-radius: 18px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .working-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        .working-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .working-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            color: white;
+            font-size: 1.5rem;
+        }
+        .working-title {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+            color: var(--light-text);
+        }
+        .working-company {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+        .working-period {
+            color: var(--gray-text);
+            font-style: italic;
+            font-size: 0.95rem;
+        }
+        .working-description {
+            margin-bottom: 20px;
+            color: var(--gray-text);
+        }
+        .working-responsibilities {
+            list-style: none;
+            padding-left: 0;
+        }
+        .working-responsibilities li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        .working-responsibilities li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+        
         /* ===== Services Section ===== */
         .services {
             padding: 120px 0;
@@ -587,68 +794,41 @@
             position: relative;
             border-radius: 18px;
             overflow: hidden;
-            height: 280px;
-            opacity: 0;
-            transform: translateY(40px);
+            background-color: var(--dark-card);
+            box-shadow: var(--shadow);
             transition: var(--transition);
             animation: fadeInUp 0.6s ease forwards;
         }
         .portfolio-item img {
             width: 100%;
-            height: 100%;
+            height: 220px;
             object-fit: cover;
+            border-radius: 18px 18px 0 0;
             transition: transform 0.5s ease;
         }
         .portfolio-item:hover img {
-            transform: scale(1.12);
+            transform: scale(1.05);
         }
-        .portfolio-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(106, 90, 249, 0.85);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            transition: var(--transition);
+        .portfolio-content {
             padding: 25px;
             text-align: center;
         }
-        .portfolio-item:hover .portfolio-overlay {
-            opacity: 1;
-        }
-        .portfolio-overlay h3 {
+        .portfolio-content h3 {
             color: white;
-            margin-bottom: 12px;
-            transform: translateY(-30px);
-            transition: var(--transition);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
         }
-        .portfolio-overlay p {
+        .portfolio-content p {
             color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 20px;
-            transform: translateY(-30px);
-            transition: var(--transition);
-            transition-delay: 0.1s;
+            margin-bottom: 25px;
+            font-size: 0.95rem;
         }
-        .portfolio-overlay .btn-group {
+        .portfolio-content .btn-group {
             display: flex;
             gap: 15px;
             flex-wrap: wrap;
             justify-content: center;
-            transform: translateY(-30px);
-            transition: var(--transition);
-            transition-delay: 0.2s;
         }
-        .portfolio-item:hover .portfolio-overlay h3,
-        .portfolio-item:hover .portfolio-overlay p,
-        .portfolio-item:hover .portfolio-overlay .btn-group {
-            transform: translateY(0);
-        }
-        
         /* ===== Achievements Section ===== */
         .achievements {
             padding: 120px 0;
@@ -677,7 +857,6 @@
         .achievement-card:nth-child(1) { animation-delay: 0.2s; }
         .achievement-card:nth-child(2) { animation-delay: 0.4s; }
         .achievement-card:nth-child(3) { animation-delay: 0.6s; }
-        .achievement-card:nth-child(4) { animation-delay: 0.8s; }
         .achievement-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
@@ -876,7 +1055,7 @@
         /* ===== Responsive Design ===== */
         @media (max-width: 992px) {
             .hero-content { width: 65%; }
-            .about-content, .contact-content { flex-direction: column; }
+            .about-content, .contact-content, .skills-container { flex-direction: column; }
         }
         @media (max-width: 768px) {
             .menu-toggle { display: block; }
@@ -917,6 +1096,10 @@
             .hero-btns .btn + .btn { margin-left: 0; margin-top: 15px; }
             .portfolio-grid, .services-grid, .achievements-grid { grid-template-columns: 1fr; }
             .contact-content { gap: 40px; }
+            .tools-grid { grid-template-columns: repeat(3, 1fr); }
+            .portfolio-item img {
+                height: 200px;
+            }
         }
     </style>
 </head>
@@ -935,6 +1118,7 @@
                 <ul class="nav-links">
                     <li><a href="#home" class="active">Home</a></li>
                     <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#portfolio">Projects</a></li>
                     <li><a href="#achievements">Achievements</a></li>
@@ -948,7 +1132,7 @@
         <div class="container">
             <div class="hero-content">
                 <h1>Hi, I'm <span class="name-container"><span class="highlight-name"></span><span class="cursor-blink"></span></span></h1>
-                <p>A passionate Creative Designer & Full-Stack Developer focused on creating beautiful, functional websites and applications that provide exceptional user experiences.</p>
+                <p>I blend creativity and strategy, focusing on UI/UX design, management, and coding. I enjoy turning ideas into engaging, functional digital experiences.</p>
                 <div class="hero-btns">
                     <!-- Fixed Download CV Button -->
                     <a href="#" class="btn" id="download-cv-btn">Download CV</a>
@@ -982,43 +1166,235 @@
                 </div>
                 <div class="about-text animate">
                     <h3>Creative Designer & Developer</h3>
-                    <p>Hello! I'm Nisalka, a passionate designer and developer with over 5 years of experience creating digital solutions. I specialize in creating stunning websites, applications, and brand identities that help businesses grow.</p>
-                    <p>My journey began at 16, fascinated by how websites work. Since then, I've mastered both design and development, allowing me to create products that are not only beautiful but also highly functional.</p>
-                    <div class="skills">
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <h4>UI/UX Design</h4>
-                                <span>90%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="90%"></div>
+                    <p>Hello! I am a second-year undergraduate at Sabaragamuwa University of Sri Lanka, pursuing a BSc (Hons) in Computing and Information Systems. I am passionate about UI/UX design and enjoy creating engaging, user-friendly digital experiences that make technology accessible and enjoyable.</p>
+                    <p>Alongside my interest in design, I have a strong passion for management, including organizing projects, coordinating teams, and ensuring tasks are executed efficiently. I enjoy combining creativity with strategic thinking to deliver practical solutions.</p>
+                    <p>In addition, I am developing my coding skills to build functional and interactive web solutions. By integrating design, management, and technical expertise, I aim to create impactful digital products that are both visually appealing and highly usable.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Skills Section -->
+    <section class="skills-section" id="skills">
+        <div class="container">
+            <div class="section-title animate">
+                <h2>My Skills</h2>
+            </div>
+            <div class="skills-container">
+                <div class="skills-category animate">
+                    <h3>Technical Skills</h3>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <h4>UI/UX Design</h4>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <h4>Frontend Development</h4>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <h4>Backend Development</h4>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <h4>Responsive Design</h4>
+                            <span>95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="95%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <h4>JavaScript/React</h4>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <h4>Database Management</h4>
+                            <span>75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="75%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skills-category animate">
+                    <h3>Soft Skills</h3>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <h4>Communication</h4>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <h4>Problem Solving</h4>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <h4>Teamwork</h4>
+                            <span>95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="95%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <h4>Time Management</h4>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <h4>Adaptability</h4>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <h4>Leadership</h4>
+                            <span>75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="75%"></div>
+                        </div>
+                    </div>
+                    <!-- Tools & Technologies with Icons -->
+                    <div class="tools-section">
+                        <h3>Tools & Technologies</h3>
+                        <div class="tools-category">
+                            <h4>Design</h4>
+                            <div class="tools-grid">
+                                <div class="tool-item">
+                                    <div class="tool-icon"><i class="fab fa-figma"></i></div>
+                                    <div class="tool-name">Figma</div>
+                                </div>
+                                <div class="tool-item">
+                                    <div class="tool-icon"><i class="fab fa-adobe"></i></div>
+                                    <div class="tool-name">Adobe XD</div>
+                                </div>
+                                <div class="tool-item">
+                                    <div class="tool-icon"><i class="fab fa-photoshop"></i></div>
+                                    <div class="tool-name">Photoshop</div>
+                                </div>
+                                <div class="tool-item">
+                                    <div class="tool-icon"><i class="fab fa-adobe"></i></div>
+                                    <div class="tool-name">Illustrator</div>
+                                </div>
                             </div>
                         </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <h4>Frontend Development</h4>
-                                <span>80%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="85%"></div>
+                        <div class="tools-category">
+                            <h4>Frontend</h4>
+                            <div class="tools-grid">
+                                <div class="tool-item">
+                                    <div class="tool-icon"><i class="fab fa-html5"></i></div>
+                                    <div class="tool-name">HTML5</div>
+                                </div>
+                                <div class="tool-item">
+                                    <div class="tool-icon"><i class="fab fa-css3-alt"></i></div>
+                                    <div class="tool-name">CSS3</div>
+                                </div>
+                                <div class="tool-item">
+                                    <div class="tool-icon"><i class="fab fa-js"></i></div>
+                                    <div class="tool-name">JavaScript</div>
+                                </div>
+                                <div class="tool-item">
+                                    <div class="tool-icon"><i class="fab fa-react"></i></div>
+                                    <div class="tool-name">React</div>
+                                </div>
+                                <div class="tool-item">
+                                    <div class="tool-icon"><i class="fab fa-vuejs"></i></div>
+                                    <div class="tool-name">Vue.js</div>
+                                </div>
                             </div>
                         </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <h4>Backend Development</h4>
-                                <span>50%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="80%"></div>
+                        <div class="tools-category">
+                            <h4>Backend</h4>
+                            <div class="tools-grid">
+                                <div class="tool-item">
+                                    <div class="tool-icon"><i class="fab fa-node-js"></i></div>
+                                    <div class="tool-name">Node.js</div>
+                                </div>
+                                <div class="tool-item">
+                                    <div class="tool-icon"><i class="fab fa-js"></i></div>
+                                    <div class="tool-name">Express</div>
+                                </div>
+                                <div class="tool-item">
+                                    <div class="tool-icon"><i class="fab fa-python"></i></div>
+                                    <div class="tool-name">Python</div>
+                                </div>
+                                <div class="tool-item">
+                                    <div class="tool-icon"><i class="fas fa-code"></i></div>
+                                    <div class="tool-name">Django</div>
+                                </div>
                             </div>
                         </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <h4>Responsive Design</h4>
-                                <span>75%</span>
+                        <div class="tools-category">
+                            <h4>Database</h4>
+                            <div class="tools-grid">
+                                <div class="tool-item">
+                                    <div class="tool-icon"><i class="fas fa-database"></i></div>
+                                    <div class="tool-name">MongoDB</div>
+                                </div>
+                                <div class="tool-item">
+                                    <div class="tool-icon"><i class="fas fa-database"></i></div>
+                                    <div class="tool-name">MySQL</div>
+                                </div>
+                                <div class="tool-item">
+                                    <div class="tool-icon"><i class="fas fa-database"></i></div>
+                                    <div class="tool-name">PostgreSQL</div>
+                                </div>
                             </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="95%"></div>
+                        </div>
+                        <div class="tools-category">
+                            <h4>Version Control</h4>
+                            <div class="tools-grid">
+                                <div class="tool-item">
+                                    <div class="tool-icon"><i class="fab fa-git-alt"></i></div>
+                                    <div class="tool-name">Git</div>
+                                </div>
+                                <div class="tool-item">
+                                    <div class="tool-icon"><i class="fab fa-github"></i></div>
+                                    <div class="tool-name">GitHub</div>
+                                </div>
+                                <div class="tool-item">
+                                    <div class="tool-icon"><i class="fab fa-gitlab"></i></div>
+                                    <div class="tool-name">GitLab</div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1066,6 +1442,60 @@
             </div>
         </div>
     </section>
+    <!-- Volunteering Section -->
+    <section class="volunteering-section" id="volunteering">
+        <div class="container">
+            <div class="section-title animate">
+                <h2>Volunteering Experience</h2>
+            </div>
+            
+            <div class="volunteer-item animate">
+                <div class="volunteer-header">
+                    <div class="volunteer-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div>
+                        <h3 class="volunteer-title">Member of Rotaract Club</h3>
+                        <div class="volunteer-period">2025 - Present</div>
+                    </div>
+                </div>
+                <p class="volunteer-description">Treasure of SDG 10 Project</p>
+                <ul class="volunteer-achievements">
+                    <li>We distributed seeds and plants to selected families, empowering them to start home gardens and take steps toward self-sufficiency under SDG 10 - Reduce Inequality</li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </section>
+    
+    <!-- Working Experience Section -->
+    <section class="working-section" id="working">
+        <div class="container">
+            <div class="section-title animate">
+                <h2>Working Experience</h2>
+            </div>
+            <div class="working-item animate">
+                <div class="working-header">
+                    <div class="working-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div>
+                        <h3 class="working-title">School Leaver Trainer</h3>
+                        <div class="working-company">Bank of Ceylon</div>
+                        <div class="working-period">Nov 2023 - May 2024</div>
+                    </div>
+                </div>
+                <p class="working-description">Developing responsive web applications using React.js and modern frontend technologies for various clients across different industries.</p>
+                <ul class="working-responsibilities">
+                    <li>Gaining hands-on experience in daily banking operations, customer service, and administrative tasks.</li>
+                    <li>This role helped me develop strong communication, teamwork, and organizational skills while learning how financial institutions function in a professional environment.</li>
+                </ul>
+            </div>
+                            
+        </div>
+    </section>
+    
     <!-- Portfolio Section -->
     <section class="portfolio" id="portfolio">
         <div class="container">
@@ -1076,7 +1506,7 @@
             <div class="portfolio-grid">
                 <div class="portfolio-item" data-category="web">
                     <img src="Beauty Salon Branding and Marketing.jpg" alt="E-Commerce Website">
-                    <div class="portfolio-overlay">
+                    <div class="portfolio-content">
                         <h3>E-Commerce salon Website</h3>
                         <p>Where Style Meets Convenience – Book, Shop, and Shine Online!</p>
                         <div class="btn-group">
@@ -1086,9 +1516,9 @@
                 </div>
                 <div class="portfolio-item" data-category="app">
                     <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=1170&q=80" alt="Fitness App">
-                    <div class="portfolio-overlay">
+                    <div class="portfolio-content">
                         <h3>Fitness Tracking App</h3>
-                        <p>Track workouts and nutrition</p>
+                        <p>Track workouts and nutrition with personalized recommendations</p>
                         <div class="btn-group">
                             <a href="https://example.com/fitness-app" class="btn btn-outline" target="_blank">View Project</a>
                             <a href="https://github.com/sasindi-perera/fitness-app" class="btn btn-secondary" target="_blank"><i class="fab fa-github"></i> GitHub</a>
@@ -1098,7 +1528,6 @@
             </div>
         </div>
     </section>
-    
     <!-- Achievements Section -->
     <section class="achievements" id="achievements">
         <div class="container">
@@ -1110,42 +1539,32 @@
                     <div class="achievement-icon">
                         <i class="fas fa-certificate"></i>
                     </div>
-                    <h3>Web Design for Begginers</h3>
-                    <img src="https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Google UX Design Certificate" class="certificate-img">
-                    <p>Completed comprehensive UX design course covering user research, wireframing, prototyping, and usability testing.</p>
-                    <div class="issuer">Issued by Google</div>
+                    <h3>Web Design for Beginners</h3>
+                    <img src="UOM.png" alt="University of Moratuwa Certificate" class="certificate-img">
+                    <p>Completed 'Web Design for Beginners,' gaining hands-on experience in HTML, CSS, and basic web layouts to create visually appealing, user-friendly websites.</p>
+                    <div class="issuer">Issued by University of Moratuwa</div>
                 </div>
                 <div class="achievement-card animate">
                     <div class="achievement-icon">
                         <i class="fas fa-certificate"></i>
                     </div>
-                    <h3>Full Stack Web Development Certificate</h3>
-                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Full Stack Web Development Certificate" class="certificate-img">
-                    <p>Mastered full stack development including HTML, CSS, JavaScript, React, Node.js, and MongoDB.</p>
-                    <div class="issuer">Issued by Coursera</div>
+                    <h3>Introduction to Management</h3>
+                    <img src="Greate learning.png" alt="Great Learning Certificate" class="certificate-img">
+                    <p>I am passionate about management and leadership, with an interest in organizing teams, planning projects, and optimizing processes for better efficiency.</p>
+                    <div class="issuer">Issued by Great Learning Academy</div>
                 </div>
                 <div class="achievement-card animate">
                     <div class="achievement-icon">
                         <i class="fas fa-certificate"></i>
                     </div>
-                    <h3>Adobe Certified Professional</h3>
-                    <img src="https://images.unsplash.com/photo-1618044733300-941bcfb3f88b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Adobe Certified Professional" class="certificate-img">
-                    <p>Certified in Adobe Creative Suite including Photoshop, Illustrator, and XD for professional design work.</p>
-                    <div class="issuer">Issued by Adobe</div>
-                </div>
-                <div class="achievement-card animate">
-                    <div class="achievement-icon">
-                        <i class="fas fa-certificate"></i>
-                    </div>
-                    <h3>Responsive Web Design Certification</h3>
-                    <img src="https://images.unsplash.com/photo-1581276879432-15e50529f34b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Responsive Web Design Certificate" class="certificate-img">
-                    <p>Completed advanced responsive web design course focusing on mobile-first design and accessibility.</p>
-                    <div class="issuer">Issued by freeCodeCamp</div>
+                    <h3>PEARLHACK 3.0 | Designathon Finalists</h3>
+                    <img src="Team athena 2.jpg" alt="IEEE WIE Certificate" class="certificate-img">
+                    <p>We are Team Athena and our UI/UX design created in Figma has been selected for the final round!</p>
+                    <div class="issuer">Issued by IEEE WIE Student Branch of SUSL</div>
                 </div>
             </div>
         </div>
     </section>
-    
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="container">
@@ -1160,21 +1579,21 @@
                         <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
                         <div class="contact-text">
                             <h4>Location</h4>
-                            <p>Colombo, Sri Lanka</p>
+                            <p>Kalutara, Sri Lanka</p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <div class="contact-icon"><i class="fas fa-envelope"></i></div>
                         <div class="contact-text">
                             <h4>Email</h4>
-                            <p>nisalka.sasindi@example.com</p>
+                            <p>sasindiperera9999@gmail.com</p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <div class="contact-icon"><i class="fas fa-phone"></i></div>
                         <div class="contact-text">
                             <h4>Phone</h4>
-                            <p>+94 77 123 4567</p>
+                            <p>+94 76 100 2295</p>
                         </div>
                     </div>
                 </div>
@@ -1214,6 +1633,7 @@
                     <ul class="footer-links">
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">About</a></li>
+                        <li><a href="#skills">Skills</a></li>
                         <li><a href="#services">Services</a></li>
                         <li><a href="#portfolio">Projects</a></li>
                         <li><a href="#achievements">Achievements</a></li>
@@ -1275,10 +1695,12 @@
                 e.preventDefault();
                 const targetId = this.getAttribute('href');
                 const targetElement = document.querySelector(targetId);
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80,
-                    behavior: 'smooth'
-                });
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
                 document.querySelectorAll('.nav-links a').forEach(link => link.classList.remove('active'));
                 this.classList.add('active');
             });
@@ -1302,9 +1724,9 @@
                 bar.style.width = width;
             });
         }
-        const aboutSection = document.querySelector('#about');
+        const skillsSection = document.querySelector('#skills');
         function checkSkills() {
-            if (window.scrollY + window.innerHeight > aboutSection.offsetTop + 200) {
+            if (window.scrollY + window.innerHeight > skillsSection.offsetTop + 200) {
                 animateSkills();
                 window.removeEventListener('scroll', checkSkills);
             }
@@ -1401,8 +1823,43 @@
                 const cvText = `Nisalka Sasindi - CV
 Professional Summary:
 Creative Designer & Full-Stack Developer with 5+ years of experience...
-Contact: nisalka.sasindi@example.com
-Phone: +94 77 123 4567`;
+Contact: sasindiperera9999@gmail.com
+Phone: +94 76 100 2295
+Technical Skills:
+- UI/UX Design (90%)
+- Frontend Development (85%)
+- Backend Development (80%)
+- Responsive Design (95%)
+- JavaScript/React (85%)
+- Database Management (75%)
+Soft Skills:
+- Communication (90%)
+- Problem Solving (85%)
+- Teamwork (95%)
+- Time Management (80%)
+- Adaptability (85%)
+- Leadership (75%)
+Tools & Technologies:
+- Design: Figma, Adobe XD, Photoshop, Illustrator
+- Frontend: HTML5, CSS3, JavaScript, React, Vue.js
+- Backend: Node.js, Express, Python, Django
+- Database: MongoDB, MySQL, PostgreSQL
+- Version Control: Git, GitHub, GitLab
+Projects:
+- E-Commerce Salon Website
+- Fitness Tracking App
+Volunteering Experience:
+- Tech Mentor (2023 - Present)
+- Community Organizer (2022 - Present)
+- Workshop Facilitator (2021 - 2023)
+Working Experience:
+- Frontend Developer at Tech Solutions Inc. (Jan 2023 - Present)
+- UI/UX Designer at Creative Studio Ltd. (Jun 2022 - Dec 2022)
+- Web Development Intern at Digital Agency Co. (Mar 2021 - Aug 2021)
+Education & Certifications:
+- Web Design for Beginners (University of Moratuwa)
+- Introduction to Management (Great Learning Academy)
+- PEARLHACK 3.0 | Designathon Finalists (IEEE WIE Student Branch of SUSL)`;
                 // Try PDF first, fallback to text
                 try {
                     tempLink.href = 'data:application/pdf;charset=utf-8,' + encodeURIComponent(pdfContent);
@@ -1416,8 +1873,6 @@ Phone: +94 77 123 4567`;
                 document.body.appendChild(tempLink);
                 tempLink.click();
                 document.body.removeChild(tempLink);
-                // Show confirmation
-                alert('Your CV download has started!');
             });
             // Ensure the button has proper z-index to be clickable
             downloadBtn.style.position = 'relative';
