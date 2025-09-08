@@ -2039,28 +2039,34 @@
             }
         });
         // Typewriter effect for name
-        document.addEventListener('DOMContentLoaded', function () {
-            const nameElement = document.querySelector('.highlight-name');
-            const fullName = 'Nisalka Sasindi';
-            const cursor = document.querySelector('.cursor-blink');
-            // Hide the element initially
-            nameElement.textContent = '';
-            cursor.style.display = 'inline-block';
-            // Typewriter effect
-            let i = 0;
-            const typeWriter = () => {
-                if (i < fullName.length) {
-                    nameElement.textContent += fullName.charAt(i);
-                    i++;
-                    setTimeout(typeWriter, 150); // Adjust typing speed here (150ms per character)
-                } else {
-                    // Blinking cursor continues after typing is complete
-                    cursor.style.display = 'inline-block';
-                }
-            };
-            // Start the animation after the hero content appears
-            setTimeout(typeWriter, 800);
-        });
+document.addEventListener('DOMContentLoaded', function () {
+    const nameElement = document.querySelector('.highlight-name');
+    const fullName = 'Nisalka Sasindi';
+    const cursor = document.querySelector('.cursor-blink');
+
+    // Hide the element initially
+    nameElement.textContent = '';
+    cursor.style.display = 'inline-block';
+
+    let i = 0;
+
+    const typeWriter = () => {
+        if (i < fullName.length) {
+            nameElement.textContent += fullName.charAt(i);
+            i++;
+            setTimeout(typeWriter, 150); // Typing speed
+        } else {
+            // Hide cursor after typing finishes
+            setTimeout(() => {
+                cursor.style.display = 'none';
+            }, 500); // Delay before hiding cursor (optional)
+        }
+    };
+
+    // Start animation after hero content appears
+    setTimeout(typeWriter, 800);
+});
+
         // Fixed Download CV Button Functionality
         document.addEventListener('DOMContentLoaded', function () {
             const downloadBtn = document.getElementById('download-cv-btn');
