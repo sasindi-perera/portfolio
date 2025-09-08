@@ -980,15 +980,21 @@
             gap: 30px;
         }
 
-        .portfolio-item {
-            position: relative;
-            border-radius: 18px;
-            overflow: hidden;
-            background-color: var(--dark-card);
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            animation: fadeInUp 0.6s ease forwards;
-        }
+       .portfolio-item {
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    background-color: var(--dark-card);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    animation: fadeInUp 0.6s ease forwards;
+
+    /* Responsive centering */
+    width: 90%;          /* take 90% of parent width */
+    max-width: 600px;    /* prevent it from getting too wide */
+    margin: 0 auto;      /* center horizontally */
+}
+
 
         .portfolio-item img {
             width: 100%;
@@ -2156,4 +2162,5 @@ Education & Certifications:
 </body>
 
 </html>
+
 
