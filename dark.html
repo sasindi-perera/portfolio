@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -384,19 +385,17 @@
 
         .hero-img {
             position: absolute;
-            right: 5%;
-            width: 30%;
-            height: 50%;
+            right: 6%;
+            width: 25%;
+            height: 70%;
             z-index: 1;
             border-radius: 25px;
             overflow: hidden;
-            box-shadow: var(--shadow);
             opacity: 0;
             transform: translateX(80px);
             animation: fadeInRight 1s ease forwards 1.2s;
-            border: 3px solid rgba(106, 90, 249, 0.3);
             transition: transform 0.5s ease;
-            margin-top: -400px;
+            margin-top:-400px;
         }
 
         .hero-img img {
@@ -407,7 +406,7 @@
         }
 
         .hero-img:hover img {
-            transform: scale(1.1);
+            transform: scale(1.019);
         }
 
         .social-links-home {
@@ -980,21 +979,15 @@
             gap: 30px;
         }
 
-       .portfolio-item {
-    position: relative;
-    border-radius: 18px;
-    overflow: hidden;
-    background-color: var(--dark-card);
-    box-shadow: var(--shadow);
-    transition: var(--transition);
-    animation: fadeInUp 0.6s ease forwards;
-
-    /* Responsive centering */
-    width: 90%;          /* take 90% of parent width */
-    max-width: 600px;    /* prevent it from getting too wide */
-    margin: 0 auto;      /* center horizontally */
-}
-
+        .portfolio-item {
+            position: relative;
+            border-radius: 18px;
+            overflow: hidden;
+            background-color: var(--dark-card);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            animation: fadeInUp 0.6s ease forwards;
+        }
 
         .portfolio-item img {
             width: 100%;
@@ -1451,7 +1444,7 @@
                 </div>
             </div>
             <div class="hero-img">
-                <img src="Picture2.png" alt="Nisalka">
+                <img src="img p.png" alt="Nisalka">
             </div>
             <div class="floating-shapes">
                 <div class="shape"></div>
@@ -1799,7 +1792,20 @@
                         </div>
                     </div>
                 </div>
-                
+                <div class="portfolio-item" data-category="app">
+                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=1170&q=80"
+                        alt="Fitness App">
+                    <div class="portfolio-content">
+                        <h3>Fitness Tracking App</h3>
+                        <p>Track workouts and nutrition with personalized recommendations</p>
+                        <div class="btn-group">
+                            <a href="https://example.com/fitness-app" class="btn btn-outline" target="_blank">View
+                                Project</a>
+                            <a href="https://github.com/sasindi-perera/fitness-app" class="btn btn-secondary"
+                                target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -2162,5 +2168,3 @@ Education & Certifications:
 </body>
 
 </html>
-
-
