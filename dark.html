@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nisalka Sasindi | Creative Designer & Developer</title>
+    <title>Nisalka Sasindi | QA Engineer </title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* ===== Global Dark Theme & Animations ===== */
@@ -187,6 +187,14 @@
             color: white;
         }
 
+        .btn-sm {
+            padding: 8px 18px;
+            font-size: 0.85rem;
+            letter-spacing: 0.8px;
+            text-transform: none;
+            border-radius: 20px;
+        }
+
         /* ===== Header & Navigation ===== */
         header {
             position: fixed;
@@ -330,7 +338,6 @@
             animation: fadeInUp 0.8s ease forwards 0.3s;
         }
 
-        /* Typewriter Effect */
         .name-container {
             position: relative;
             display: inline-block;
@@ -565,23 +572,6 @@
             gap: 60px;
         }
 
-        .about-image {
-            flex: 1;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-        }
-
-        .about-image img {
-            width: 100%;
-            height: auto;
-            transition: transform 0.5s;
-        }
-
-        .about-image:hover img {
-            transform: scale(1.05);
-        }
-
         .about-text {
             flex: 1;
         }
@@ -662,52 +652,97 @@
             transition: width 2s ease;
         }
 
-        /* Tools & Technologies */
+        /* Tools & Technologies Alignment Fix */
         .tools-section {
-            margin-top: 40px;
+            margin-top: 80px;
             width: 100%;
-            display: block;
+        }
+
+        .tools-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .tools-header h3 {
+            display: inline-block;
+            position: relative;
+            padding-bottom: 12px;
+            color: var(--primary-color);
+        }
+
+        .tools-header h3::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background: var(--gradient);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .tools-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 30px;
+            justify-content: center;
         }
 
         .tools-category {
-            margin-bottom: 25px;
+            background-color: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            transition: var(--transition);
+        }
+
+        .tools-category:hover {
+            border-color: rgba(106, 90, 249, 0.3);
+            transform: translateY(-5px);
         }
 
         .tools-category h4 {
-            margin-bottom: 15px;
-            color: var(--primary-color);
-            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--light-text);
+            font-size: 1.1rem;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding-bottom: 10px;
         }
 
         .tools-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(85px, 1fr));
+            gap: 15px;
             justify-items: center;
+            align-items: center;
         }
 
         .tool-item {
             text-align: center;
-            padding: 15px;
+            padding: 12px 8px;
             background-color: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
+            border-radius: 12px;
             transition: var(--transition);
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             width: 100%;
+            height: 90px;
         }
 
         .tool-item:hover {
             transform: translateY(-5px);
-            background-color: rgba(106, 90, 249, 0.1);
+            background-color: rgba(106, 90, 249, 0.15);
             box-shadow: var(--border-glow);
         }
 
         .tool-icon {
-            font-size: 2rem;
-            margin-bottom: 10px;
+            font-size: 1.8rem;
+            margin-bottom: 8px;
             color: var(--primary-color);
             display: flex;
             align-items: center;
@@ -715,8 +750,10 @@
         }
 
         .tool-name {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 500;
+            color: var(--light-text);
+            line-height: 1.2;
         }
 
         /* ===== Volunteering Section ===== */
@@ -1014,17 +1051,29 @@
             justify-content: center;
         }
 
-        /* ===== Achievements Section ===== */
-        .achievements {
+        /* ===== Achievements & Certifications Sections (Separated) ===== */
+        .achievements-section {
             padding: 120px 0;
             background-color: var(--dark-card);
+        }
+
+        .sub-heading {
+            text-align: center;
+            margin: 40px 0 30px 0;
+        }
+
+        .sub-heading h3 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            position: relative;
+            display: inline-block;
         }
 
         .achievements-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 35px;
-            margin-top: 60px;
+            gap: 30px;
+            margin-bottom: 60px;
         }
 
         .achievement-card {
@@ -1037,19 +1086,21 @@
             position: relative;
             overflow: hidden;
             border: 1px solid rgba(255, 255, 255, 0.05);
-            transform: translateY(30px);
-            opacity: 0;
-            animation: fadeInUp 0.6s ease forwards;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .achievement-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-8px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            border-color: rgba(106, 90, 249, 0.3);
         }
 
         .achievement-icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
+            font-size: 2.8rem;
+            margin-bottom: 18px;
             color: var(--primary-color);
             transition: var(--transition);
         }
@@ -1059,33 +1110,37 @@
             transform: scale(1.1);
         }
 
-        .achievement-card h3 {
-            margin-bottom: 15px;
+        .achievement-card h4 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
             color: var(--light-text);
         }
 
         .achievement-card p {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             color: var(--gray-text);
-        }
-
-        .certificate-img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 12px;
-            margin: 20px 0;
-            transition: var(--transition);
-        }
-
-        .achievement-card:hover .certificate-img {
-            transform: scale(1.05);
+            font-size: 0.95rem;
+            flex-grow: 1;
         }
 
         .issuer {
             font-weight: 600;
             color: var(--primary-color);
-            margin-top: 10px;
+            margin-bottom: 18px;
+            font-size: 0.9rem;
+        }
+
+        .card-action {
+            margin-top: auto;
+            width: 100%;
+        }
+
+        .card-action .btn {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
         }
 
         /* ===== Contact Section ===== */
@@ -1336,8 +1391,8 @@
                 padding-top: 120px;
             }
 
-            .tools-grid {
-                grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+            .tools-wrapper {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -1399,7 +1454,7 @@
                                 class="cursor-blink"></span></span></h1>
                     <p>I blend technology, problem-solving, and attention to detail to ensure reliable software through quality assurance and testing.</p>
                     <div class="hero-btns">
-                        <a href="#" class="btn" id="download-cv-btn">Download CV</a>
+                        <a href="Nisalka_QA_CV.pdf" download="Nisalka_QA_CV.pdf" class="btn" id="download-cv-btn">Download CV</a>
                         <a href="#contact" class="btn btn-outline">Get In Touch</a>
                     </div>
                     <div class="social-links-home">
@@ -1429,11 +1484,10 @@
                 <h2>About Me</h2>
             </div>
             <div class="about-content">
-               
                 <div class="about-text animate">
                     <h3>QA Engineer in Progress</h3>
                     <p>Hello! I am an IT undergraduate at Sabaragamuwa University of Sri Lanka, pursuing a BSc (Hons) in Computing and Information Systems. I am passionate about Quality Assurance and Software Testing, and I enjoy analyzing software, identifying issues, and ensuring applications provide reliable and user-friendly experiences.</p>
-                    <p>I am currently developing my skills in manual testing, test case design, test execution, defect reporting, and test documentation. I also have experience with automation testing using Java, Playwright, Selenium, JUnit, and Maven.</p>
+                    <p>I am currently developing my skills in manual testing, test case design, test execution, defect reporting, and test documentation. I also have experience with automation testing using Java, Playwright, Selenium, JUnit, Postman, and GitHub Actions.</p>
                     <p>I enjoy finding software defects and making sure applications work as expected from a user's perspective. I am continuously improving my knowledge of QA processes, API testing, automation testing, and CI/CD practices. My goal is to build a career as a QA Engineer and contribute to delivering reliable, high-quality software.</p>
                 </div>
             </div>
@@ -1448,10 +1502,10 @@
             </div>
             <div class="skills-container">
                 <div class="skills-category animate">
-                    <h3>Technical Skills</h3>
+                    <h3>Testing & QA Skills</h3>
                     <div class="skill-item">
                         <div class="skill-info">
-                            <h4>UI/UX Design</h4>
+                            <h4>Manual Testing & Test Case Design</h4>
                             <span>90%</span>
                         </div>
                         <div class="skill-bar">
@@ -1460,7 +1514,16 @@
                     </div>
                     <div class="skill-item">
                         <div class="skill-info">
-                            <h4>Frontend Development</h4>
+                            <h4>Automation Testing (Selenium, Playwright)</h4>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <h4>API Testing (Postman)</h4>
                             <span>85%</span>
                         </div>
                         <div class="skill-bar">
@@ -1469,34 +1532,25 @@
                     </div>
                     <div class="skill-item">
                         <div class="skill-info">
-                            <h4>Backend Development</h4>
-                            <span>60%</span>
+                            <h4>Regression & UI Testing</h4>
+                            <span>85%</span>
                         </div>
                         <div class="skill-bar">
-                            <div class="skill-progress" data-width="60%"></div>
+                            <div class="skill-progress" data-width="85%"></div>
                         </div>
                     </div>
                     <div class="skill-item">
                         <div class="skill-info">
-                            <h4>Responsive Design</h4>
-                            <span>75%</span>
+                            <h4>UI/UX Design (Figma)</h4>
+                            <span>90%</span>
                         </div>
                         <div class="skill-bar">
-                            <div class="skill-progress" data-width="75%"></div>
+                            <div class="skill-progress" data-width="90%"></div>
                         </div>
                     </div>
                     <div class="skill-item">
                         <div class="skill-info">
-                            <h4>JavaScript/React</h4>
-                            <span>75%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-width="75%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <h4>Database Management</h4>
+                            <h4>Frontend Development (React / JS)</h4>
                             <span>80%</span>
                         </div>
                         <div class="skill-bar">
@@ -1509,11 +1563,11 @@
                     <h3>Soft Skills</h3>
                     <div class="skill-item">
                         <div class="skill-info">
-                            <h4>Communication</h4>
-                            <span>75%</span>
+                            <h4>Analytical & Critical Thinking</h4>
+                            <span>90%</span>
                         </div>
                         <div class="skill-bar">
-                            <div class="skill-progress" data-width="75%"></div>
+                            <div class="skill-progress" data-width="90%"></div>
                         </div>
                     </div>
                     <div class="skill-item">
@@ -1527,7 +1581,16 @@
                     </div>
                     <div class="skill-item">
                         <div class="skill-info">
-                            <h4>Teamwork</h4>
+                            <h4>Adaptability & Quick Learning</h4>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <h4>Teamwork & Collaboration</h4>
                             <span>95%</span>
                         </div>
                         <div class="skill-bar">
@@ -1536,7 +1599,7 @@
                     </div>
                     <div class="skill-item">
                         <div class="skill-info">
-                            <h4>Time Management</h4>
+                            <h4>Responsibility & Communication</h4>
                             <span>85%</span>
                         </div>
                         <div class="skill-bar">
@@ -1545,94 +1608,114 @@
                     </div>
                     <div class="skill-item">
                         <div class="skill-info">
-                            <h4>Adaptability</h4>
+                            <h4>Time Management & Leadership</h4>
                             <span>85%</span>
                         </div>
                         <div class="skill-bar">
                             <div class="skill-progress" data-width="85%"></div>
                         </div>
                     </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <h4>Leadership</h4>
-                            <span>85%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-width="85%"></div>
+                </div>
+            </div>
+
+            <!-- Centered Tools & Technologies Section -->
+            <div class="tools-section animate">
+                <div class="tools-header">
+                    <h3>Tools & Technologies</h3>
+                </div>
+                <div class="tools-wrapper">
+                    <div class="tools-category">
+                        <h4>Testing & QA Tools</h4>
+                        <div class="tools-grid">
+                            <div class="tool-item">
+                                <div class="tool-icon"><i class="fas fa-vial"></i></div>
+                                <div class="tool-name">Selenium</div>
+                            </div>
+                            <div class="tool-item">
+                                <div class="tool-icon"><i class="fas fa-paper-plane"></i></div>
+                                <div class="tool-name">Postman</div>
+                            </div>
+                            <div class="tool-item">
+                                <div class="tool-icon"><i class="fas fa-vials"></i></div>
+                                <div class="tool-name">JUnit</div>
+                            </div>
+                            <div class="tool-item">
+                                <div class="tool-icon"><i class="fas fa-robot"></i></div>
+                                <div class="tool-name">Playwright</div>
+                            </div>
+                            <div class="tool-item">
+                                <div class="tool-icon"><i class="fas fa-tasks"></i></div>
+                                <div class="tool-name">Jira</div>
+                            </div>
+                            <div class="tool-item">
+                                <div class="tool-icon"><i class="fab fa-github-alt"></i></div>
+                                <div class="tool-name">GitHub Actions</div>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Tools & Technologies -->
-                    <div class="tools-section">
-                        <h3>Tools & Technologies</h3>
-                        <div class="tools-category">
-                            <h4>Design</h4>
-                            <div class="tools-grid">
-                                <div class="tool-item">
-                                    <div class="tool-icon"><i class="fab fa-figma"></i></div>
-                                    <div class="tool-name">Figma</div>
-                                </div>
-                                <div class="tool-item">
-                                    <div class="tool-icon"><i class="fas fa-image"></i></div>
-                                    <div class="tool-name">Photoshop</div>
-                                </div>
+                    <div class="tools-category">
+                        <h4>Languages & Frameworks</h4>
+                        <div class="tools-grid">
+                            <div class="tool-item">
+                                <div class="tool-icon"><i class="fab fa-java"></i></div>
+                                <div class="tool-name">Java</div>
+                            </div>
+                            <div class="tool-item">
+                                <div class="tool-icon"><i class="fab fa-js"></i></div>
+                                <div class="tool-name">JavaScript</div>
+                            </div>
+                            <div class="tool-item">
+                                <div class="tool-icon"><i class="fab fa-html5"></i></div>
+                                <div class="tool-name">HTML5 / CSS3</div>
+                            </div>
+                            <div class="tool-item">
+                                <div class="tool-icon"><i class="fab fa-react"></i></div>
+                                <div class="tool-name">React Native</div>
+                            </div>
+                            <div class="tool-item">
+                                <div class="tool-icon"><i class="fab fa-node-js"></i></div>
+                                <div class="tool-name">Node.js</div>
                             </div>
                         </div>
-                        <div class="tools-category">
-                            <h4>Frontend</h4>
-                            <div class="tools-grid">
-                                <div class="tool-item">
-                                    <div class="tool-icon"><i class="fab fa-html5"></i></div>
-                                    <div class="tool-name">HTML5</div>
-                                </div>
-                                <div class="tool-item">
-                                    <div class="tool-icon"><i class="fab fa-css3-alt"></i></div>
-                                    <div class="tool-name">CSS3</div>
-                                </div>
-                                <div class="tool-item">
-                                    <div class="tool-icon"><i class="fab fa-js"></i></div>
-                                    <div class="tool-name">JavaScript</div>
-                                </div>
-                                <div class="tool-item">
-                                    <div class="tool-icon"><i class="fab fa-react"></i></div>
-                                    <div class="tool-name">React</div>
-                                </div>
+                    </div>
+
+                    <div class="tools-category">
+                        <h4>Databases</h4>
+                        <div class="tools-grid">
+                            <div class="tool-item">
+                                <div class="tool-icon"><i class="fas fa-database"></i></div>
+                                <div class="tool-name">MySQL</div>
+                            </div>
+                            <div class="tool-item">
+                                <div class="tool-icon"><i class="fas fa-leaf"></i></div>
+                                <div class="tool-name">MongoDB</div>
+                            </div>
+                            <div class="tool-item">
+                                <div class="tool-icon"><i class="fas fa-fire"></i></div>
+                                <div class="tool-name">Firebase</div>
                             </div>
                         </div>
-                        <div class="tools-category">
-                            <h4>Backend</h4>
-                            <div class="tools-grid">
-                                <div class="tool-item">
-                                    <div class="tool-icon"><i class="fab fa-node-js"></i></div>
-                                    <div class="tool-name">Node.js</div>
-                                </div>
-                                <div class="tool-item">
-                                    <div class="tool-icon"><i class="fab fa-python"></i></div>
-                                    <div class="tool-name">Python</div>
-                                </div>
+                    </div>
+
+                    <div class="tools-category">
+                        <h4>Development Tools</h4>
+                        <div class="tools-grid">
+                            <div class="tool-item">
+                                <div class="tool-icon"><i class="fab fa-git-alt"></i></div>
+                                <div class="tool-name">Git</div>
                             </div>
-                        </div>
-                
-                        <div class="tools-category">
-                            <h4>Database</h4>
-                            <div class="tools-grid">
-                                <div class="tool-item">
-                                    <div class="tool-icon"><i class="fas fa-database"></i></div>
-                                    <div class="tool-name">MySQL</div>
-                                </div>
+                            <div class="tool-item">
+                                <div class="tool-icon"><i class="fab fa-github"></i></div>
+                                <div class="tool-name">GitHub</div>
                             </div>
-                        </div>
-                        <div class="tools-category">
-                            <h4>Version Control</h4>
-                            <div class="tools-grid">
-                                <div class="tool-item">
-                                    <div class="tool-icon"><i class="fab fa-git-alt"></i></div>
-                                    <div class="tool-name">Git</div>
-                                </div>
-                                <div class="tool-item">
-                                    <div class="tool-icon"><i class="fab fa-github"></i></div>
-                                    <div class="tool-name">GitHub</div>
-                                </div>
+                            <div class="tool-item">
+                                <div class="tool-icon"><i class="fas fa-code"></i></div>
+                                <div class="tool-name">VS Code</div>
+                            </div>
+                            <div class="tool-item">
+                                <div class="tool-icon"><i class="fab fa-figma"></i></div>
+                                <div class="tool-name">Figma</div>
                             </div>
                         </div>
                     </div>
@@ -1649,24 +1732,24 @@
             </div>
             <div class="services-grid">
                 <div class="service-card animate">
+                    <div class="service-icon"><i class="fas fa-vials"></i></div>
+                    <h3>Quality Assurance & Testing</h3>
+                    <p>Executing manual and automated testing, designing comprehensive test cases, API testing, and defect logging.</p>
+                </div>
+                <div class="service-card animate">
                     <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
                     <h3>UI/UX Design</h3>
-                    <p>Creating intuitive, user-centered designs with engaging interactions and seamless experiences.</p>
+                    <p>Creating intuitive, user-centered designs with engaging interactions and seamless experiences in Figma.</p>
                 </div>
                 <div class="service-card animate">
                     <div class="service-icon"><i class="fas fa-code"></i></div>
-                    <h3>Web Development</h3>
-                    <p>Building responsive, performant websites using modern frameworks and clean code.</p>
-                </div>
-                <div class="service-card animate">
-                    <div class="service-icon"><i class="fas fa-shopping-cart"></i></div>
-                    <h3>E-Commerce Solutions</h3>
-                    <p>Building online stores with secure payments, inventory, and smooth checkout.</p>
+                    <h3>Web & Mobile Development</h3>
+                    <p>Building responsive frontend mobile and web applications using React Native, HTML/CSS, and JavaScript.</p>
                 </div>
                 <div class="service-card animate">
                     <div class="service-icon"><i class="fas fa-cogs"></i></div>
-                    <h3>Project Management</h3>
-                    <p>Organizing and leading projects with clear planning, efficient teamwork, and on-time delivery.</p>
+                    <h3>Project Coordination</h3>
+                    <p>Organizing and leading projects with clear planning, effective teamwork, and structured workflows.</p>
                 </div>
             </div>
         </div>
@@ -1684,13 +1767,30 @@
                         <i class="fas fa-users"></i>
                     </div>
                     <div>
-                        <h3 class="volunteer-title">Member of Rotaract Club</h3>
+                        <h3 class="volunteer-title">Rotaract Club of Sabaragamuwa University</h3>
                         <div class="volunteer-period">2025 - Present</div>
                     </div>
                 </div>
                 <p class="volunteer-description">Treasurer of SDG 10 Project</p>
                 <ul class="volunteer-achievements">
                     <li>Distributed seeds and plants to selected families, empowering them to start home gardens and take steps toward self-sufficiency under SDG 10 - Reduce Inequality.</li>
+                </ul>
+            </div>
+            <div class="volunteer-item animate">
+                <div class="volunteer-header">
+                    <div class="volunteer-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div>
+                        <h3 class="volunteer-title">IEEE Student Branch - Sabaragamuwa University</h3>
+                        <div class="volunteer-period">2026</div>
+                    </div>
+                </div>
+              
+                <ul class="volunteer-achievements">
+                    <li>Program Team Lead for "Vesak Verse '26" AI Digital Art Competition.</li>
+                    <li>Secretary Team member for InnovateX 1.0, IEEE Computer Society Chapter.</li>
+                    <li>Program Team member for SDG Sprint Technical Workshop, IEEE Computer Society Chapter.</li>
                 </ul>
             </div>
         </div>
@@ -1706,15 +1806,16 @@
                 <div class="working-header">
                     <div class="working-icon">BOC</div>
                     <div>
-                        <h3 class="working-title">School Leaver Trainer</h3>
+                        <h3 class="working-title">School Leaver Trainee</h3>
                         <div class="working-company">Bank of Ceylon</div>
                         <div class="working-period">Nov 2023 - May 2024</div>
                     </div>
                 </div>
                 <p class="working-description">Assisting with banking operations, administrative tasks, and customer service.</p>
                 <ul class="working-responsibilities">
-                    <li>Gaining hands-on experience in daily banking operations, customer service, and administrative tasks.</li>
-                    <li>Developed strong communication, teamwork, and organizational skills while learning operational workflows in a professional environment.</li>
+                    <li>Supported daily banking operations with accuracy and strict attention to detail.</li>
+                    <li>Handled documents and operational information in accordance with standard procedures.</li>
+                    <li>Developed strong communication, teamwork, time management, and problem-solving skills in a professional corporate environment.</li>
                 </ul>
             </div>
         </div>
@@ -1728,12 +1829,35 @@
             </div>
             <div class="portfolio-grid">
                 <div class="portfolio-item">
-                    <img src="Beauty Salon Branding and Marketing.jpg" alt="E-Commerce Salon Website">
+                    <img src="Manual Testing.png" alt="E-Commerce Platform Manual Testing">
                     <div class="portfolio-content">
-                        <h3>E-Commerce Salon Website</h3>
-                        <p>Where Style Meets Convenience – Book, Shop, and Shine Online!</p>
+                        <h3>E-Commerce Platform - Manual Testing</h3>
+                        <p>Analyzed application requirements, designed structured test scenarios and cases for login, cart, and checkout, and documented defects with clear logs.</p>
+                        <p>(Individual Project)</p>
                         <div class="btn-group">
-                            <a href="https://github.com/sasindi-perera/Chic_charm.git" class="btn btn-outline" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Repository</a>
+                            <a href="https://github.com/sasindi-perera/E-Commerce-Manual-Testing.git" class="btn btn-outline" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Repository</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="IEEECompConnect.png" alt="IEEE CompConnect Mobile App">
+                    <div class="portfolio-content">
+                        <h3>IEEE CompConnect</h3>
+                        <p>Cross-platform mobile app for IEEE student branches. Contributed to Figma UI/UX design, React Native development, testing, and debugging.</p>
+                       <p>(Group Project)</p>
+                        <div class="btn-group">
+                            <a href="https://github.com/sasindi-perera/Capstone-IEEE-CompConnect.git" class="btn btn-outline" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Repository</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="LeoConnect.png" alt="LeoConnect Sri Lanka">
+                    <div class="portfolio-content">
+                        <h3>LeoConnect Sri Lanka</h3>
+                        <p>Verified digital platform for Leo members across Sri Lanka. Responsible for UI design, responsive screens, and usability testing.</p>
+                        <p>(Group Project)</p>
+                        <div class="btn-group">
+                            <a href="https://github.com/sasindi-perera/Leo-app-full.git" class="btn btn-outline" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Repository</a>
                         </div>
                     </div>
                 </div>
@@ -1741,39 +1865,179 @@
         </div>
     </section>
 
-    <!-- Achievements Section -->
-    <section class="achievements" id="achievements">
+    <!-- Achievements & Certifications Section (Separated with Clickable Link Buttons) -->
+    <section class="achievements-section" id="achievements">
         <div class="container">
             <div class="section-title animate">
-                <h2>My Achievements</h2>
+                <h2>Honors & Certifications</h2>
+            </div>
+
+            <!-- Awards & Honors Sub-section -->
+            <div class="sub-heading animate">
+                <h3><i class="fas fa-trophy"></i> Competition Awards & Honors</h3>
             </div>
             <div class="achievements-grid">
                 <div class="achievement-card animate">
                     <div class="achievement-icon">
-                        <i class="fas fa-certificate"></i>
+                        <i class="fas fa-crown"></i>
                     </div>
-                    <h3>Web Design for Beginners</h3>
-                    <img src="UOM.png" alt="University of Moratuwa Certificate" class="certificate-img">
-                    <p>Completed 'Web Design for Beginners,' gaining hands-on experience in HTML, CSS, and basic web layouts to create visually appealing websites.</p>
-                    <div class="issuer">Issued by University of Moratuwa</div>
+                    <h4>Winner - Hackora 2026</h4>
+                    <p>Secured 1st Place at Hackora 2026 organized by Sabaragamuwa University of Sri Lanka.</p>
+                    <div class="issuer">Sabaragamuwa University of Sri Lanka</div>
+                    <div class="card-action">
+                        <a href="https://lnkd.in/p/gNNqHxFb" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm"><i class="fas fa-external-link-alt"></i> View Award Link</a>
+                    </div>
                 </div>
+
                 <div class="achievement-card animate">
                     <div class="achievement-icon">
-                        <i class="fas fa-certificate"></i>
+                        <i class="fas fa-award"></i>
                     </div>
-                    <h3>Introduction to Management</h3>
-                    <img src="Greate learning.png" alt="Great Learning Certificate" class="certificate-img">
-                    <p>Focused on management and leadership, organizing teams, planning projects, and optimizing processes for efficiency.</p>
-                    <div class="issuer">Issued by Great Learning Academy</div>
+                    <h4>1st Runners Up - AlgoArena 2025</h4>
+                    <p>Achieved 2nd place in AlgoArena 2025 organized by Leo Club of USJ.</p>
+                    <div class="issuer">Leo Club of University of Sri Jayewardenepura</div>
+                    <div class="card-action">
+                        <a href="https://lnkd.in/p/gUidbSGz" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm"><i class="fas fa-external-link-alt"></i> View Award Link</a>
+                    </div>
                 </div>
+
                 <div class="achievement-card animate">
                     <div class="achievement-icon">
-                        <i class="fas fa-certificate"></i>
+                        <i class="fas fa-medal"></i>
                     </div>
-                    <h3>PEARLHACK 3.0 | Finalists</h3>
-                    <img src="Team athena 2.jpg" alt="IEEE WIE Certificate" class="certificate-img">
-                    <p>Selected as finalists in the Designathon round with Team Athena using Figma UI/UX prototypes.</p>
-                    <div class="issuer">Issued by IEEE WIE Student Branch of SUSL</div>
+                    <h4>Finalist - Hack Like a Girl 3.0!</h4>
+                    <p>Recognized as a finalist in Hack Like a Girl 3.0! hackathon competition.</p>
+                    <div class="issuer">SLASSCOM</div>
+                    <div class="card-action">
+                        <a href="https://lnkd.in/p/gbadSswE" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm"><i class="fas fa-external-link-alt"></i> View Award Link</a>
+                    </div>
+                </div>
+
+                <div class="achievement-card animate">
+                    <div class="achievement-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h4>Finalist - HackElite 2.0</h4>
+                    <p>Selected as a finalist at HackElite 2.0 (IEEE UoM).</p>
+                    <div class="issuer">University of Moratuwa</div>
+                    <div class="card-action">
+                        <a href="https://lnkd.in/p/gnRyYhTs" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm"><i class="fas fa-external-link-alt"></i> View Award Link</a>
+                    </div>
+                </div>
+
+                 <div class="achievement-card animate">
+                    <div class="achievement-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h4>Finalist - MoraExtreme 10.0</h4>
+                    <p>Selected as a finalist at MoraExtreme 10.0 (IEEE UoM).</p>
+                    <div class="issuer">University of Moratuwa</div>
+                    <div class="card-action">
+                        <a href="https://lnkd.in/p/ggwkbCGR" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm"><i class="fas fa-external-link-alt"></i> View Award Link</a>
+                    </div>
+                </div>
+
+                 <div class="achievement-card animate">
+                    <div class="achievement-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h4>Finalist - D'Hack 2025</h4>
+                    <p>Selected as a top 7 finalist at D'Hack 2025 (Faculty of management USJ).</p>
+                    <div class="issuer">University of Sri Jayewardenepura</div>
+                    <div class="card-action">
+                        <a href="https://www.linkedin.com/posts/sasindi-perera-_dhack2025-uinova-designathon-ugcPost-7404067544317255680-k4RP/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFOQ-oIBETWVf22oGeVReb88YF7vmoOISNs" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm"><i class="fas fa-external-link-alt"></i> View Award Link</a>
+                    </div>
+                </div>
+
+                <div class="achievement-card animate">
+                    <div class="achievement-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h4>Finalist - PEARLHACK 3.0 | DESIGNATHON</h4>
+                    <p>Selected as a top 5 finalist at PEARLHACK 3.0|DESIGNATHON (IEEE WIE SUSL).</p>
+                    <div class="issuer">Sabaragamuwa University of Sri Lanka</div>
+                    <div class="card-action">
+                        <a href="https://www.linkedin.com/posts/sasindi-perera-_ieee-wie-ieeewie-activity-7282817388721373186-t7co?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFOQ-oIBETWVf22oGeVReb88YF7vmoOISNs" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm"><i class="fas fa-external-link-alt"></i> View Award Link</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Professional Certifications Sub-section -->
+            <div class="sub-heading animate">
+                <h3><i class="fas fa-certificate"></i> Professional Certifications</h3>
+            </div>
+            <div class="achievements-grid">
+                <div class="achievement-card animate">
+                    <div class="achievement-icon">
+                        <i class="fas fa-vials"></i>
+                    </div>
+                    <h4>Software Testing Full Course</h4>
+                    <p>Comprehensive training covering SDLC, test planning, manual testing, and defect reporting.</p>
+                    <div class="issuer">Issued by Cursa</div>
+                    <div class="card-action">
+                        <a href="https://cursa.app/en/my-certificate/cert03067e0f2871671c2114bb4d726a66f3" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm"><i class="fas fa-external-link-alt"></i> Verify Credential</a>
+                    </div>
+                </div>
+
+                <div class="achievement-card animate">
+                    <div class="achievement-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h4>Agile Scrum Master</h4>
+                    <p>Certified in Agile methodologies, sprint planning, backlog refinement, and Scrum frameworks.</p>
+                    <div class="issuer">Issued by Simplilearn</div>
+                    <div class="card-action">
+                        <a href="https://www.simplilearn.com/skillup-certificate-landing?token=eyJjb3Vyc2VfaWQiOiI0NDgzIiwiY2VydGlmaWNhdGVfdXJsIjoiaHR0cHM6XC9cL2NlcnRpZmljYXRlcy5zaW1wbGljZG4ubmV0XC9zaGFyZVwvMTAzNjg2NDJfMTA2NzM4MjRfMTc4MTg4NjIxMjQwNS5wbmciLCJ1c2VybmFtZSI6Ik5pc2Fsa2EgU2FzaW5kaSJ9&utm_source=shared-certificate&utm_medium=lms&utm_campaign=shared-certificate-promotion&referrer=https%3A%2F%2Flms.simplilearn.com%2Fcourses%2F7411%2FAgile%2520Scrum%2520Master_SkillUp%2Fcertificate%2Fdownload-skillup&%24web_only=true&_branch_match_id=1596242105545850812&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXL87MLcjJ1EssKNDLyczL1k%2FVN84IyTLILyoKNE2yrytKTUstKsrMS49PKsovL04tsvUBqkpN8cwDAAxDQxBBAAAA" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm"><i class="fas fa-external-link-alt"></i> Verify Credential</a>
+                    </div>
+                </div>
+
+                <div class="achievement-card animate">
+                    <div class="achievement-icon">
+                        <i class="fab fa-aws"></i>
+                    </div>
+                    <h4>AWS Cloud Essentials</h4>
+                    <p>Gained fundamental knowledge of AWS cloud architecture and deployment practices.</p>
+                    <div class="issuer">Issued by AWS Training & Certification</div>
+                    <div class="card-action">
+                        <a href="https://lnkd.in/p/gdY63uWT" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm"><i class="fas fa-external-link-alt"></i> Verify Credential</a>
+                    </div>
+                </div>
+
+                <div class="achievement-card animate">
+                    <div class="achievement-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h4>Software Testing with Generative AI</h4>
+                    <p>Explored AI-assisted test automation and prompt engineering for quality assurance.</p>
+                    <div class="issuer">Issued by Simplilearn</div>
+                    <div class="card-action">
+                        <a href="https://www.simplilearn.com/skillup-certificate-landing?token=eyJjb3Vyc2VfaWQiOiI1MjY3IiwiY2VydGlmaWNhdGVfdXJsIjoiaHR0cHM6XC9cL2NlcnRpZmljYXRlcy5zaW1wbGljZG4ubmV0XC9zaGFyZVwvMTAzNjU0NDBfMTA2NzM4MjRfMTc4MTgxMTg0MDk1MC5wbmciLCJ1c2VybmFtZSI6Ik5pc2Fsa2EgU2FzaW5kaSJ9&utm_source=shared-certificate&utm_medium=lms&utm_campaign=shared-certificate-promotion&referrer=https%3A%2F%2Flms.simplilearn.com%2Fcourses%2F8258%2FSoftware%2520Testing%2520with%2520Generative%2520AI%2Fcertificate%2Fdownload-skillup&%24web_only=true&_branch_match_id=1596242105545850812&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXL87MLcjJ1EssKNDLyczL1k%2FVT852yS4rzSgKNE2yrytKTUstKsrMS49PKsovL04tsvUBqkpN8cwDAKAi3jRBAAAA" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm"><i class="fas fa-external-link-alt"></i> Verify Credential</a>
+                    </div>
+                </div>
+
+                <div class="achievement-card animate">
+                    <div class="achievement-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h4>Web Design for Beginners</h4>
+                    <p>Hands-on experience in HTML, CSS, and web design layouts to create accessible websites.</p>
+                    <div class="issuer">CODL - University of Moratuwa</div>
+                    <div class="card-action">
+                        <a href="https://drive.google.com/file/d/1LHh8_L0Dx0CXPcnmbZ7P-mo5lyoloYCn/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm"><i class="fas fa-external-link-alt"></i> Verify Credential</a>
+                    </div>
+                </div>
+
+                <div class="achievement-card animate">
+                    <div class="achievement-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h4>Business Analysis & Process Management</h4>
+                    <p>Learned business process mapping, requirement gathering, and analysis workflows.</p>
+                    <div class="issuer">Issued by Coursera</div>
+                    <div class="card-action">
+                        <a href="https://lnkd.in/p/gWyb9bM9" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm"><i class="fas fa-external-link-alt"></i> Verify Credential</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1788,7 +2052,7 @@
             <div class="contact-content">
                 <div class="contact-info animate">
                     <h3>Let's Work Together</h3>
-                    <p>I'm always open to new projects and opportunities. Feel free to reach out!</p>
+                    <p>I'm always open to new QA projects and software engineering opportunities. Feel free to reach out!</p>
                     <div class="contact-item">
                         <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
                         <div class="contact-text">
@@ -1800,7 +2064,7 @@
                         <div class="contact-icon"><i class="fas fa-envelope"></i></div>
                         <div class="contact-text">
                             <h4>Email</h4>
-                            <p>sasindiperera9999@gmail.com</p>
+                            <p>sasindiperera2022@gmail.com</p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -1836,10 +2100,10 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <h3>Nisalka Sasindi</h3>
-                    <p>Creative designer and developer passionate about creating digital experiences that make a difference.</p>
+                    <p>Quality Assurance Engineer & IT Undergraduate passionate about delivering reliable, defect-free software.</p>
                     <div class="social-links">
                         <a href="https://www.linkedin.com/in/sasindi-perera-" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="mailto:sasindiperera9999@gmail.com"><i class="fa-regular fa-envelope"></i></a>
+                        <a href="mailto:sasindiperera2022@gmail.com"><i class="fa-regular fa-envelope"></i></a>
                         <a href="https://github.com/sasindi-perera" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
                     </div>
                 </div>
@@ -1858,10 +2122,10 @@
                 <div class="footer-column">
                     <h3>Services</h3>
                     <ul class="footer-links">
+                        <li><a href="#services">QA & Software Testing</a></li>
                         <li><a href="#services">UI/UX Design</a></li>
-                        <li><a href="#services">Web Development</a></li>
-                        <li><a href="#services">E-Commerce Solutions</a></li>
-                        <li><a href="#services">Project Management</a></li>
+                        <li><a href="#services">Web & Mobile Development</a></li>
+                        <li><a href="#services">Project Coordination</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -1876,7 +2140,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Nisalka Sasindi. All Rights Reserved.</p>
+                <p>&copy; 2026 Nisalka Sasindi. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
@@ -1987,19 +2251,6 @@
 
                 setTimeout(typeWriter, 500);
             }
-        });
-
-        // Download CV Action
-        document.getElementById('download-cv-btn').addEventListener('click', function (e) {
-            e.preventDefault();
-            const cvText = `Nisalka Sasindi - CV\n\nCreative Designer & Full-Stack Developer\nContact: sasindiperera9999@gmail.com\nPhone: +94 76 100 2295`;
-            const blob = new Blob([cvText], { type: 'text/plain;charset=utf-8' });
-            const tempLink = document.createElement('a');
-            tempLink.href = URL.createObjectURL(blob);
-            tempLink.download = 'Nisalka_Sasindi_CV.txt';
-            document.body.appendChild(tempLink);
-            tempLink.click();
-            document.body.removeChild(tempLink);
         });
     </script>
 </body>
